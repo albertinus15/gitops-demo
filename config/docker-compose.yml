@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  web:
+    image: gitops-demo:1.0.0
+    deploy:
+      mode: replicated
+      replicas: 2
+      update_config:
+        parallelism: 1
+        delay: 10s
+        order: start-first
+        failure_action: rollback
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+    ports:
+      - "8080:3000"
+    environment:
+      - NODE_ENV=production
+      - APP_VERSION=1.0.0
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: overlay
+    external: true

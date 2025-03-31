@@ -1,0 +1,21 @@
+{
+  "name": "gitops-demo-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js application for GitOps demonstration",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "keywords": [
+    "gitops",
+    "docker",
+    "swarm",
+    "demo"
+  ],
+  "author": "DevOps Team",
+  "license": "MIT"
+}
