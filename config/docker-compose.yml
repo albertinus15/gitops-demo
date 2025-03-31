@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    image: gitops-demo:1.0.0
+    image: 156.67.219.189:8082/repository/repo/gitops-demo:1.0.0
     deploy:
       mode: replicated
       replicas: 2
