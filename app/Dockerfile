@@ -4,9 +4,9 @@ FROM node:18-alpine
 WORKDIR /usr/src/app
 
 # Menginstal dependensi
-# Menyalin package.json dan package-lock.json terlebih dahulu untuk memanfaatkan Docker cache
+# Menyalin package.json terlebih dahulu untuk memanfaatkan Docker cache
 COPY package*.json ./
-RUN npm ci --only=production
+RUN npm install --only=production
 
 # Menyalin kode sumber aplikasi
 COPY . .
