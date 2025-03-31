@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    image: 156.67.219.189:8082/repository/repo/gitops-demo:1.0.0
+    image: 156.67.219.189:8082/repository/repo/gitops-demo:6e9ec0e20250401
     deploy:
       mode: replicated
       replicas: 2
@@ -22,7 +22,7 @@ services:
       - "8088:3000"
     environment:
       - NODE_ENV=production
-      - APP_VERSION=1.0.0
+      - APP_VERSION=6e9ec0e20250401
     networks:
       - app_network
 
